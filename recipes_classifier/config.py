@@ -1,7 +1,7 @@
 DATA_DIR = "data"
 
 TRAIN_FILE = "Recipes Train.csv"
-VAL_FILE = "Recipes Validate.csv"
+VAL_FILE = "Recipes Validation.csv"
 TEST_FILE = "Recipes Test.csv"
 
 MODEL_CHECKPOINT = "distilbert-base-uncased"
