@@ -14,13 +14,10 @@
     "2": "breakfast-and-brunch",
     "3": "desserts",
     "4": "drinks",
-    "5": "fruits-and-vegetables",
-    "6": "main-dish",
-    "7": "meat-and-poultry",
-    "8": "salad",
-    "9": "seafood",
-    "10": "side-dish",
-    "11": "soups-stews-and-chili"
+    "5": "main-dish",
+    "6": "salad",
+    "7": "side-dish",
+    "8": "soups-stews-and-chili"
   },
   "initializer_range": 0.02,
   "label2id": {
@@ -29,15 +26,13 @@
     "breakfast-and-brunch": 2,
     "desserts": 3,
     "drinks": 4,
-    "fruits-and-vegetables": 5,
-    "main-dish": 6,
-    "meat-and-poultry": 7,
-    "salad": 8,
-    "seafood": 9,
-    "side-dish": 10,
-    "soups-stews-and-chili": 11
+    "main-dish": 5,
+    "salad": 6,
+    "side-dish": 7,
+    "soups-stews-and-chili": 8
   },
   "max_position_embeddings": 512,
+  "num_labels": 9,
   "model_type": "distilbert",
   "n_heads": 12,
   "n_layers": 6,

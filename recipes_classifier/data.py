@@ -49,6 +49,8 @@ def _load_split(filename: str) -> pd.DataFrame:
                     pass
             if isinstance(val, str):
                 parts.append(val)
+        if len(parts) > 1:
+            parts[0] = parts[0] + "."  # Add period after title
         return " ".join(parts)
 
     df["text"] = df.apply(build_text, axis=1)

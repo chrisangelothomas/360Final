@@ -3,7 +3,7 @@ import os
 import json
 import numpy as np
 import torch
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from transformers import AutoTokenizer, AutoModelForSequenceClassification, AutoConfig
 
 from .config import OUTPUT_DIR, DATA_DIR
 from .data import load_datasets
@@ -24,7 +24,27 @@ def build_and_save_embeddings(batch_size: int = 32, max_length: int = 256):
     datasets, label2id, id2label = load_datasets()
 
     tokenizer = AutoTokenizer.from_pretrained(OUTPUT_DIR)
-    model = AutoModelForSequenceClassification.from_pretrained(OUTPUT_DIR)
+    
+    # Load config first to get the correct label mappings
+    config = AutoConfig.from_pretrained(OUTPUT_DIR)
+    
+    # The model was trained with 9 classes - explicitly set this
+    # This prevents transformers from inferring num_labels from separate label files
+    config.num_labels = 9
+    
+    # Ensure id2label and label2id match the 9-class model
+    # Convert string keys to int for id2label if needed
+    if hasattr(config, 'id2label') and config.id2label:
+        if isinstance(list(config.id2label.keys())[0], str):
+            config.id2label = {int(k): v for k, v in config.id2label.items()}
+    
+    # Load model with explicit num_labels to match the saved weights (9 classes)
+    model = AutoModelForSequenceClassification.from_pretrained(
+        OUTPUT_DIR,
+        num_labels=9,
+        id2label=config.id2label,
+        label2id=config.label2id
+    )
     model.eval()
     model.config.output_hidden_states = True  # we want hidden states for embeddings
 
