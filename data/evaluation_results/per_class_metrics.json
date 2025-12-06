@@ -1,0 +1,65 @@
+[
+  {
+    "class": "appetizers-and-snacks",
+    "precision": 0.9752747252747253,
+    "recall": 0.9568733153638814,
+    "f1_score": 0.9659863945578231,
+    "support": 371
+  },
+  {
+    "class": "bread",
+    "precision": 0.8920863309352518,
+    "recall": 0.9725490196078431,
+    "f1_score": 0.9305816135084428,
+    "support": 255
+  },
+  {
+    "class": "breakfast-and-brunch",
+    "precision": 0.9469026548672567,
+    "recall": 0.816793893129771,
+    "f1_score": 0.8770491803278688,
+    "support": 131
+  },
+  {
+    "class": "desserts",
+    "precision": 0.9943342776203966,
+    "recall": 0.9777158774373259,
+    "f1_score": 0.9859550561797753,
+    "support": 359
+  },
+  {
+    "class": "drinks",
+    "precision": 0.8974358974358975,
+    "recall": 1.0,
+    "f1_score": 0.9459459459459459,
+    "support": 35
+  },
+  {
+    "class": "main-dish",
+    "precision": 0.001893939393939394,
+    "recall": 0.027777777777777776,
+    "f1_score": 0.0035460992907801418,
+    "support": 36
+  },
+  {
+    "class": "salad",
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0,
+    "support": 313
+  },
+  {
+    "class": "side-dish",
+    "precision": 0.027777777777777776,
+    "recall": 0.0047169811320754715,
+    "f1_score": 0.008064516129032258,
+    "support": 212
+  },
+  {
+    "class": "soups-stews-and-chili",
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0,
+    "support": 302
+  }
+]

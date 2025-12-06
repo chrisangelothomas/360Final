@@ -1,0 +1,15 @@
+                       precision    recall  f1-score   support
+
+appetizers-and-snacks       0.98      0.96      0.97       371
+                bread       0.89      0.97      0.93       255
+ breakfast-and-brunch       0.95      0.82      0.88       131
+             desserts       0.99      0.98      0.99       359
+               drinks       0.90      1.00      0.95        35
+            main-dish       0.00      0.03      0.00        36
+                salad       0.00      0.00      0.00       313
+            side-dish       0.03      0.00      0.01       212
+soups-stews-and-chili       0.00      0.00      0.00       302
+
+             accuracy                           0.55      2014
+            macro avg       0.53      0.53      0.52      2014
+         weighted avg       0.55      0.55      0.55      2014

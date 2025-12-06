@@ -42,4 +42,6 @@ Thumbs.db
 *.safetensors
 models/*/model.safetensors
 data/*.npz
+# Exception: allow recipe_embeddings.npz to be tracked
+!data/recipe_embeddings.npz
 

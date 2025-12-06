@@ -114,6 +114,32 @@ class RecipeClassifier:
         category = self.id2label[predicted_id]
         return category, confidence
     
+    def predict_proba(self, text: str) -> np.ndarray:
+        """
+        Get probability distribution over all classes for a given text.
+        
+        Args:
+            text: The recipe description or dish name
+            
+        Returns:
+            numpy array: Probability distribution over all classes
+        """
+        encodings = self.tokenizer(
+            text,
+            truncation=True,
+            padding="max_length",
+            max_length=256,
+            return_tensors="pt"
+        )
+        encodings = {k: v.to(self.device) for k, v in encodings.items()}
+        
+        with torch.no_grad():
+            outputs = self.model(**encodings)
+            logits = outputs.logits
+            probs = torch.softmax(logits, dim=-1)
+        
+        return probs[0].cpu().numpy()  # Return probability distribution
+    
     def get_embedding(self, text: str) -> np.ndarray:
         """
         Get the embedding vector for a given text.

@@ -1,0 +1,17 @@
+{
+  "overall_accuracy": 0.5451837140019861,
+  "total_samples": 2014,
+  "correct_predictions": 1098,
+  "incorrect_predictions": 916,
+  "confidence_statistics": {
+    "mean": 0.9676710879790866,
+    "std": 0.08515390733733771,
+    "min": 0.4033925533294678,
+    "max": 0.9986948370933533,
+    "median": 0.995943158864975
+  },
+  "confidence_by_accuracy": {
+    "correct_mean": 0.965907719997326,
+    "incorrect_mean": 0.9697848194681401
+  }
+}
